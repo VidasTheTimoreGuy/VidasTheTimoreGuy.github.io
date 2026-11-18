@@ -1,1 +1,268 @@
-Bananaaaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Cult</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: black;
+    }
+
+    .banner {
+      position: relative;
+      height: 400px;
+      background: #1a1a1a url('banner.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .banner p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: calc(100vh - 280px);
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #212222;
+      color: white;
+      padding: 1.5rem 1rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #4a6a8a;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .nav-buttons button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #FFE135;
+      color: black;
+      border: none;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-buttons button:hover,
+    .nav-buttons button.active {
+      background: #EDC001;
+    }
+
+    .content {
+      flex: 1;
+      background: black;
+      padding: 2rem;
+    }
+
+    .content h2 {
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    a[href^="http"] {
+      color: yellow;
+    }
+
+    /* Hide all page sections by default */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+      .nav-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-buttons button {
+        flex: 1 1 140px;
+      }
+      .banner h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <div class="banner-content">
+      <h1>Welcome to the Banana Cult</h1>
+      <p>Have an a-peeling day</p>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+      <nav class="nav-buttons">
+        <button data-page="home" class="active">Home</button>
+        <button data-page="bananas">Bananas</button>
+        <button data-page="broadcast">Banana Broadcast</button>
+        <button data-page="games">Games</button>
+        <button data-page="patreon">Patreon</button>
+        <button data-page="contact">Contact</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <!-- Home -->
+      <section id="home" class="page active">
+        <h2>You have finally found the bananas.</h2>
+        <p>No matter where you go. They're everywhere. In your fruit basket. In your local store. In your dreams and your life goals. Bananas. Your life is yellow now. And delicious.</p>
+        <p>Did you eat a banana today? Thought so.</p>
+        <p>All hail the banana god.</p>
+        <p>Pet the banana cow:<br>
+          <a href="https://store.steampowered.com/app/4603960/Banana_Blood/">https://store.steampowered.com/app/4603960/Banana_Blood/</a>
+        </p>
+      </section>
+
+      <!-- Bananas -->
+      <section id="bananas" class="page">
+        <h2>Bananas</h2>
+        <p>We like bananas.</p>
+        <img src="AbsoluteBananas.png" alt="Banana" style="max-width: 100%; height: auto; margin: 1rem 0;">
+      </section>
+
+      <!-- Banana Broadcast -->
+      <section id="broadcast" class="page">
+        <h2>Banana Broadcast</h2>
+        <p>Banana Broadcast is a Twitch-integration video game I'm making.<br>
+        I stream the game. You summon banana monsters for me to fight with your channel points, follows, subscriptions, etc.</p>
+	<p>Join the madness:<br>
+          <a href="https://www.twitch.tv/vidasthetimoreguy">https://www.twitch.tv/vidasthetimoreguy</a>
+        </p>
+        <img src="BananaBroadcast.jpg" alt="Banana" style="max-width: 100%; height: auto; margin: 1rem 0;">
+        <p>
+	  <br>
+          DEVLOG<br>
+	  (in development) v0.3 - Bananasaurus, banana smoothie ocean, supporters' info<br>
+	  v0.2 - Assault Rifle muzzle flash added, Pink Banana, Banana Kid, Banana Costume, capped banana collecting (game is too laggy with 67000 bananas laying around).<br>
+	  v0.1 - first test: Environment, Assault Rifle, Banana Demon, banana collecting.<br>
+
+
+	  <br><br><br><br><br><br><br><br><br><br><br><br>
+        </p>
+      </section>
+
+      <!-- Games -->
+      <section id="games" class="page">
+        <h2>Games</h2>
+        <p>Banana games. Horror games. Delicious games.</p>
+	<p>Play on Steam:<br>
+          <a href="https://store.steampowered.com/developer/VidasGames">https://store.steampowered.com/developer/VidasGames</a>
+        </p>
+      </section>
+
+      <!-- Patreon -->
+      <section id="patreon" class="page">
+        <h2>Support the Banana Cult</h2>
+        <p>Join the banana cult on Patreon:</p>
+        <p><a href="https://www.patreon.com/c/VidasGames">https://www.patreon.com/c/VidasGames</a></p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="page">
+        <h2>Contact</h2>
+        <p>
+	  Email: vidasgamesstudio@gmail.com<br>
+          X / Twitter: <a href="https://x.com/VidasSalavejus">https://x.com/VidasSalavejus</a><br>
+	  Discord: <a href="https://discord.com/invite/Jm9gykH">https://discord.com/invite/Jm9gykH</a><br>
+	  Instagram: <a href="https://www.instagram.com/vidas_mr.timore/">https://www.instagram.com/vidas_mr.timore/</a><br>
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.nav-buttons button');
+    const pages = document.querySelectorAll('.page');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.page;
+
+        // Update active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Show the matching page, hide the others
+        pages.forEach(page => {
+          page.classList.toggle('active', page.id === target);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
